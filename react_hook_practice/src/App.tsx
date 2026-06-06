@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
+import { useToggle } from "./hooks/useToggle";
 
 const products = [
   {
@@ -128,13 +129,20 @@ function App() {
   const inputRef = useRef<HTMLInputElement>(null);
   const renderCount = useRef<number>(0);
   const [count, setCount] = useState<number>(0);
+  const [count2, setCount2] = useState<number>(0);
   const [search, setSearch] = useState<string>("");
+  const { isTrue, toggle } = useToggle();
 
   const filteredProducts = useMemo(() => {
     return products.filter((product) =>
       product.name.toLowerCase().includes(search.toLowerCase()),
     );
   }, [search]);
+
+  const handleClick = useCallback(() => {
+    setCount2((c) => c + 1);
+    console.log("child rendered");
+  }, [count2]);
 
   const totalPrice = useMemo(() => {
     return filteredProducts.reduce(
@@ -200,6 +208,36 @@ function App() {
           Total Price: ${totalPrice}
         </h4>
       </div>
+
+      <h1 className="text-3xl text-center">Practice useCallBack</h1>
+      <p>
+        The useCallback hook is used to optimize performance by memoizing a
+        callback function.
+      </p>
+      <h2 className="text-lg text-center">Count: {count2}</h2>
+      <button
+        onClick={handleClick}
+        className="border-2 border-blue-500 bg-red-50 focus:border-blue-700 focus:bg-red-100"
+      >
+        Click to check Callback
+      </button>
+
+      <h1 className="my-10">Practice Custom Hooks</h1>
+
+      {isTrue ? (
+        <div className="w-37.5 h-37.5 mx-auto border text-2xl text-center">
+          Opened Modal
+        </div>
+      ) : (
+        ""
+      )}
+
+      <button
+        className="p-4 rounded-4xl bg-amber-300 text-lg font-bold text-black my-5"
+        onClick={toggle}
+      >
+        {isTrue ? "Close Modal" : "Open Modal"}
+      </button>
     </>
   );
 }
