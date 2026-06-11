@@ -56,3 +56,17 @@ async function getUserData() {
 getUserData();
 
 // Challenge 3
+function debounce(fn, delay) {
+  let timer;
+
+  return function (...args) {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, delay);
+  };
+}
+const search = debounce(() => {
+  console.log("API call");
+}, 500);
