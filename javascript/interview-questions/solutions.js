@@ -105,3 +105,18 @@ function getCartSummary(cart) {
   };
 }
 console.log(getCartSummary(cart));
+
+// Challenge 5
+const user = {
+ name:"Hasib",
+ age:25
+}
+
+function updateUser(user){
+ user.name = "New name";
+ user.age = 45
+}
+
+updateUser(user)
+
+console.log(user)
