@@ -70,3 +70,38 @@ function debounce(fn, delay) {
 const search = debounce(() => {
   console.log("API call");
 }, 500);
+
+// Challenge 4
+const cart = [
+  {
+    id: 1,
+    name: "Laptop",
+    price: 1000,
+    quantity: 2,
+  },
+  {
+    id: 2,
+    name: "Mouse",
+    price: 50,
+    quantity: 1,
+  },
+];
+function calculateCartTotal(cart) {
+  let totalPrice = cart.reduce(
+    (sum, current) => sum + current.price * current.quantity,
+    0,
+  );
+  return totalPrice;
+}
+function getCartSummary(cart) {
+  let totalPrice = cart.reduce(
+    (sum, current) => sum + current.price * current.quantity,
+    0,
+  );
+  let totalItems = cart.reduce((items, current) => items + current.quantity, 0);
+  return {
+    totalPrice: totalPrice,
+    totalItems: totalItems,
+  };
+}
+console.log(getCartSummary(cart));
