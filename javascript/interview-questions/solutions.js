@@ -38,9 +38,20 @@ function fetchUser() {
 }
 async function getUserData() {
   try {
-    let data = await fetchUser();
-    
-  } catch (err) {}
+    let res = await fetchUser();
+    if (!res) {
+      return new Error("Something went wrong");
+    }
+    let data = {
+      success: true,
+      user: res,
+    };
+    console.log(data);
+    return data;
+  } catch (err) {
+    console.log(err);
+    return err;
+  }
 }
 getUserData();
 
