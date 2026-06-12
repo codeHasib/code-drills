@@ -38,4 +38,41 @@ function introduce(age, city) {
 introduce.call(user2, 26, "Chittagong");
 introduce.apply(user2, [26, "Chittagong"]);
 
+// 🟡 Level 2 — Real Use Cases
+// ✅ Challenge 3: Borrow Method
+const person1 = {
+  name: "Hasib",
+  greet() {
+    console.log("Hello " + this.name);
+  },
+};
 
+const person2 = {
+  name: "Rahim",
+};
+
+// 👉 Task:
+// Use call so that person2 can use person1.greet
+
+// Expected:
+
+// Hello Rahim
+
+person1.greet.call(person2);
+
+// ✅ Challenge 4: Use bind for Later Execution
+const user3 = {
+  name: "Hasib"
+};
+
+function greet() {
+  console.log("Hi " + this.name);
+}
+
+// 👉 Task:
+
+// Create a new function using bind
+// Call it later
+
+const fnGreet = greet.bind(user);
+fnGreet()
