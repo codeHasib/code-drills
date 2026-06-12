@@ -18,13 +18,13 @@ function sayHi() {
 sayHi.call(user);
 
 // ✅ Challenge 2: Pass Arguments
-// const user = {
-//   name: "Hasib"
-// };
+const user2 = {
+  name: "Hasib",
+};
 
-// function introduce(age, city) {
-//   console.log(`I am ${this.name}, ${age}, from ${city}`);
-// }
+function introduce(age, city) {
+  console.log(`I am ${this.name}, ${age}, from ${city}`);
+}
 
 // 👉 Task:
 
@@ -34,3 +34,8 @@ sayHi.call(user);
 // Expected:
 
 // I am Hasib, 22, from Chittagong
+
+introduce.call(user2, 26, "Chittagong");
+introduce.apply(user2, [26, "Chittagong"]);
+
+
