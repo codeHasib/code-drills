@@ -116,3 +116,16 @@ const students = [
   { name: "Sarah", grade: "A" },
   { name: "Mike", grade: "C" },
 ];
+
+const groupedObj = students.reduce((acc, curr) => {
+  if (!acc[curr.grade]) {
+    acc[curr.grade] = [];
+    students.forEach((item) => {
+      if (item.grade == curr.grade) {
+        acc[curr.grade].push(item.name);
+      }
+    });
+  }
+  return acc;
+}, {});
+console.log(groupedObj);
