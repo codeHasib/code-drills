@@ -14,17 +14,19 @@ const users = ["Hasib", "John", "Sarah", "Hasib", "John", "Mike"];
 // Result should contain each duplicate only once.
 // Order doesn't matter.
 
-// function catchDuplicate(arr) {
-//   let freshArr = [];
-//   arr.forEach((item) => {
-//     if (!freshArr.includes(item)) {
-//       freshArr.push(item);
-//     }
-//   });
-//   let duplicates = arr.filter((item) => !freshArr.includes(item));
-//   return duplicates;
-// }
-// console.log(catchDuplicate(users));
+function catchDuplicate(arr) {
+  let freshArr = [];
+  let duplicateArr = [];
+  arr.forEach((item) => {
+    if (!freshArr.includes(item)) {
+      freshArr.push(item);
+    } else if (freshArr.includes(item)) {
+      duplicateArr.push(item);
+    }
+  });
+  return duplicateArr;
+}
+console.log(catchDuplicate(users));
 
 // Challenge 2 — Most Expensive Product
 
