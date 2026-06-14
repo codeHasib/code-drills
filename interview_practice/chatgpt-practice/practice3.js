@@ -128,37 +128,64 @@ const products = [
 
 // Given:
 
-const cart = [
-  { id: 4, title: "Laptop", price: 4500 },
-  { id: 10, title: "PS5", price: 3500 },
-  { id: 55, title: "PS4", price: 1500 },
-  { id: 5, title: "Mouse", price: 200 },
-];
+// const cart = [
+//   { id: 4, title: "Laptop", price: 4500 },
+//   { id: 10, title: "PS5", price: 3500 },
+//   { id: 55, title: "PS4", price: 1500 },
+//   { id: 5, title: "Mouse", price: 200 },
+// ];
 
 // Create functions:
 
-function addToCart(product) {
-  cart.push(product);
-}
-function removeFromCart(id) {
-  let productIndex;
-  cart.forEach((item, ind) => {
-    if (item.id === id) {
-      productIndex = ind;
-    }
-  });
-  cart.splice(productIndex, 1);
-}
-function getTotal() {
-  return cart.reduce((total, curr) => total + curr.price, 0);
-}
-addToCart({ id: 3, title: "iPhone", price: 500 });
-console.log(cart);
-removeFromCart(3);
-console.log(cart);
-console.log(getTotal());
+// function addToCart(product) {
+//   cart.push(product);
+// }
+// function removeFromCart(id) {
+//   let productIndex;
+//   cart.forEach((item, ind) => {
+//     if (item.id === id) {
+//       productIndex = ind;
+//     }
+//   });
+//   cart.splice(productIndex, 1);
+// }
+// function getTotal() {
+//   return cart.reduce((total, curr) => total + curr.price, 0);
+// }
+// addToCart({ id: 3, title: "iPhone", price: 500 });
+// console.log(cart);
+// removeFromCart(3);
+// console.log(cart);
+// console.log(getTotal());
 // Requirements:
 
 // Store products inside cart.
 // Calculate total dynamically.
 // Remove by id.
+
+// Question 5 — Express Route Logic
+
+// Imagine this route:
+
+// GET /users/:id
+
+// You have:
+
+// const users = [
+//   { id: 1, name: "Hasib" },
+//   { id: 2, name: "John" },
+// ];
+
+// Write the logic that:
+
+// Finds user by id.
+// Returns user if found.
+// Returns error if not found.
+
+// You can write only the route logic.
+
+// function getUserById(id) {
+//   const result = users.find((item) => (item.id = id));
+//   if (result) return result;
+//   else return { status: 404, message: "Not found" };
+// }
