@@ -71,20 +71,20 @@ const products = [
 
 // Create:
 
-function searchProducts(keyword) {
-  let searchedArr = products.filter((item) =>
-    item.name.toLowerCase().includes(keyword.toLowerCase()),
-  );
-  if (searchedArr.length > 0) {
-    return searchedArr;
-  } else {
-    return "Nothing found";
-  }
-}
+// function searchProducts(keyword) {
+//   let searchedArr = products.filter((item) =>
+//     item.name.toLowerCase().includes(keyword.toLowerCase()),
+//   );
+//   if (searchedArr.length > 0) {
+//     return searchedArr;
+//   } else {
+//     return "Nothing found";
+//   }
+// }
 
 // Examples:
 
-console.log(searchProducts(""));
+// console.log(searchProducts(""));
 
 // Should return:
 
@@ -97,3 +97,30 @@ console.log(searchProducts(""));
 
 // Case-insensitive.
 // Partial matching
+
+// Question 3 — Simulate API Pagination
+
+// Given:
+
+const users = [
+  /* 50 users */
+];
+
+// Create:
+
+function paginate(users, page, limit) {
+  const start = page - 1 + limit;
+  const end = start + limit;
+  const targetedUsers = users.slice(start, end);
+  return targetedUsers;
+}
+
+// Example:
+
+// paginate(users, 2, 10)
+
+// Should return users 11–20.
+
+// This is a very common backend interview question.
+
+// like in a simple way so that i can also understand i do not have worked with pagination yet so
