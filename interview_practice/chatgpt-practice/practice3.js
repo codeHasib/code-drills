@@ -1,5 +1,7 @@
 // Question 1 — User Registration Validation
 
+// const { useState } = require("react");
+
 // Create a function:
 
 // function registerUser(name, email, password) {
@@ -63,11 +65,11 @@
 
 // Given:
 
-const products = [
-  { id: 1, name: "Laptop" },
-  { id: 2, name: "Phone" },
-  { id: 3, name: "Laptop Bag" },
-];
+// const products = [
+//   { id: 1, name: "Laptop" },
+//   { id: 2, name: "Phone" },
+//   { id: 3, name: "Laptop Bag" },
+// ];
 
 // Create:
 
@@ -219,3 +221,31 @@ const products = [
 // }
 
 // This tests your ability to group and calculate data.
+
+// Question 7 — React State Question
+
+// Create a component:
+
+// Counter
+
+// Requirements:
+
+// Increment button
+// Decrement button
+// Reset button
+// Count can never go below 0
+
+// Use React state.
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+      <button onClick={() => count > 0 && setCount((prev) => prev - 1)}>
+        Decrement
+      </button>
+      <button onClick={() => setCount(0)}>Reset</button>
+    </>
+  );
+};
