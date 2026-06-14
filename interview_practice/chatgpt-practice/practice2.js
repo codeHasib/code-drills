@@ -216,3 +216,40 @@ const users = [
 //   li.textContent = `Task ${taskNum}`;
 //   ul.append(li);
 // });
+
+// Challenge 8 — Mini Interview Project
+
+// Create a function:
+
+function createUser(username, age) {
+  let randomNumber = Math.floor(Math.random() * 5000) + 10000;
+  if (username.length > 0 && age > 0 && typeof username === "string" && typeof age === "number") {
+    return {
+      id: randomNumber,
+      username: username,
+      age: age,
+      isActive: true,
+    };
+  } else {
+    return "Invalid Input";
+  }
+}
+
+// If:
+
+console.log(createUser("Hasib", 26));
+
+// Return:
+
+// {
+//   id: randomNumber,
+//   username: "Hasib",
+//   age: 22,
+//   isActive: true
+// }
+
+// Requirements:
+
+// Generate a random id.
+// Validate inputs.
+// Return a user object.
