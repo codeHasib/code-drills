@@ -237,15 +237,56 @@
 
 // Use React state.
 
-const Counter = () => {
-  const [count, setCount] = useState(0);
-  return (
-    <>
-      <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
-      <button onClick={() => count > 0 && setCount((prev) => prev - 1)}>
-        Decrement
-      </button>
-      <button onClick={() => setCount(0)}>Reset</button>
-    </>
-  );
-};
+// const Counter = () => {
+//   const [count, setCount] = useState(0);
+//   return (
+//     <>
+//       <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+//       <button onClick={() => count > 0 && setCount((prev) => prev - 1)}>
+//         Decrement
+//       </button>
+//       <button onClick={() => setCount(0)}>Reset</button>
+//     </>
+//   );
+// };
+
+// Question 8 — Real Junior MERN Interview Question
+
+// Build:
+
+// function getUserStats(users) {
+//   return users.reduce(
+//     (acc, curr) => {
+//       acc.totalUsers = users.length;
+//       if (curr.active) {
+//         acc.activeUsers++;
+//       } else if (!curr.active) {
+//         acc.inactiveUsers++;
+//       }
+//       return acc;
+//     },
+//     {
+//       totalUsers: 0,
+//       activeUsers: 0,
+//       inactiveUsers: 0,
+//     },
+//   );
+// }
+
+// Input:
+
+// console.log(
+//   getUserStats([
+//     { name: "Hasib", active: true },
+//     { name: "John", active: false },
+//     { name: "Sarah", active: true },
+//   ]),
+// );
+
+// Output:
+
+// {
+//   totalUsers: 3,
+//   activeUsers: 2,
+//   inactiveUsers: 1
+// }
