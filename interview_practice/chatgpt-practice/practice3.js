@@ -2,40 +2,40 @@
 
 // Create a function:
 
-function registerUser(name, email, password) {
-  if (
-    typeof name === "string" &&
-    typeof email === "string" &&
-    typeof password === "string" &&
-    name &&
-    email &&
-    password
-  ) {
-    if (name.length < 3) {
-      return {
-        success: false,
-        message: "User name is too short",
-      };
-    } else if (!email.includes("@")) {
-      return {
-        success: false,
-        message: "Invalid email address",
-      };
-    } else if (password.length < 8) {
-      return {
-        success: false,
-        message: "Password must be in 8 characters",
-      };
-    } else {
-      return {
-        success: true,
-        message: "User registered successfully",
-      };
-    }
-  } else {
-    return "Invalid input";
-  }
-}
+// function registerUser(name, email, password) {
+//   if (
+//     typeof name === "string" &&
+//     typeof email === "string" &&
+//     typeof password === "string" &&
+//     name &&
+//     email &&
+//     password
+//   ) {
+//     if (name.length < 3) {
+//       return {
+//         success: false,
+//         message: "User name is too short",
+//       };
+//     } else if (!email.includes("@")) {
+//       return {
+//         success: false,
+//         message: "Invalid email address",
+//       };
+//     } else if (password.length < 8) {
+//       return {
+//         success: false,
+//         message: "Password must be in 8 characters",
+//       };
+//     } else {
+//       return {
+//         success: true,
+//         message: "User registered successfully",
+//       };
+//     }
+//   } else {
+//     return "Invalid input";
+//   }
+// }
 
 // Rules:
 
@@ -57,4 +57,43 @@ function registerUser(name, email, password) {
 //   message: "Password too short"
 // }
 
-console.log(registerUser("Hasib", "hasib@gmail.com", "45678985"));
+// console.log(registerUser("Hasib", "hasib@gmail.com", "45678985"));
+
+// Question 2 — MongoDB Style Search
+
+// Given:
+
+const products = [
+  { id: 1, name: "Laptop" },
+  { id: 2, name: "Phone" },
+  { id: 3, name: "Laptop Bag" },
+];
+
+// Create:
+
+function searchProducts(keyword) {
+  let searchedArr = products.filter((item) =>
+    item.name.toLowerCase().includes(keyword.toLowerCase()),
+  );
+  if (searchedArr.length > 0) {
+    return searchedArr;
+  } else {
+    return "Nothing found";
+  }
+}
+
+// Examples:
+
+console.log(searchProducts(""));
+
+// Should return:
+
+// [
+//   { id: 1, name: "Laptop" },
+//   { id: 3, name: "Laptop Bag" }
+// ]
+
+// Requirements:
+
+// Case-insensitive.
+// Partial matching
