@@ -102,18 +102,17 @@ const products = [
 
 // Given:
 
-const users = [
-  /* 50 users */
-];
+// const users = [
+// ];
 
 // Create:
 
-function paginate(users, page, limit) {
-  const start = page - 1 + limit;
-  const end = start + limit;
-  const targetedUsers = users.slice(start, end);
-  return targetedUsers;
-}
+// function paginate(users, page, limit) {
+//   const start = page - 1 + limit;
+//   const end = start + limit;
+//   const targetedUsers = users.slice(start, end);
+//   return targetedUsers;
+// }
 
 // Example:
 
@@ -124,3 +123,42 @@ function paginate(users, page, limit) {
 // This is a very common backend interview question.
 
 // like in a simple way so that i can also understand i do not have worked with pagination yet so
+
+// Question 4 — Build a Shopping Cart Logic
+
+// Given:
+
+const cart = [
+  { id: 4, title: "Laptop", price: 4500 },
+  { id: 10, title: "PS5", price: 3500 },
+  { id: 55, title: "PS4", price: 1500 },
+  { id: 5, title: "Mouse", price: 200 },
+];
+
+// Create functions:
+
+function addToCart(product) {
+  cart.push(product);
+}
+function removeFromCart(id) {
+  let productIndex;
+  cart.forEach((item, ind) => {
+    if (item.id === id) {
+      productIndex = ind;
+    }
+  });
+  cart.splice(productIndex, 1);
+}
+function getTotal() {
+  return cart.reduce((total, curr) => total + curr.price, 0);
+}
+addToCart({ id: 3, title: "iPhone", price: 500 });
+console.log(cart);
+removeFromCart(3);
+console.log(cart);
+console.log(getTotal());
+// Requirements:
+
+// Store products inside cart.
+// Calculate total dynamically.
+// Remove by id.
