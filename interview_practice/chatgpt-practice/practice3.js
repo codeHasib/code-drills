@@ -189,3 +189,33 @@ const products = [
 //   if (result) return result;
 //   else return { status: 404, message: "Not found" };
 // }
+
+// Question 6 — MongoDB Aggregation Thinking
+
+// Given:
+
+// const orders = [
+//   { category: "Electronics", amount: 500 },
+//   { category: "Electronics", amount: 200 },
+//   { category: "Books", amount: 100 },
+// ];
+
+// const groupedOrder = orders.reduce((acc, curr) => {
+//   if (acc[curr.category]) {
+//     acc[curr.category] += curr.amount;
+//   } else {
+//     acc[curr.category] = curr.amount;
+//   }
+//   return acc;
+// }, {});
+
+// console.log(groupedOrder);
+
+// Return:
+
+// {
+//   Electronics: 700,
+//   Books: 100
+// }
+
+// This tests your ability to group and calculate data.
