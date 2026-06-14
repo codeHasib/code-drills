@@ -195,13 +195,24 @@ const users = [
 //   }
 // ]
 
-function structure(data) {
-  let structuredArr = [];
-  data.forEach((item) => {
-    structuredArr.push({ label: item.name, value: item.id });
-  });
-  return structuredArr;
-}
+// function structure(data) {
+//   let structuredArr = [];
+//   data.forEach((item) => {
+//     structuredArr.push({ label: item.name, value: item.id });
+//   });
+//   return structuredArr;
+// }
 
-console.log(structure(users));
+// console.log(structure(users));
 // This is extremely common in React projects when preparing dropdown options.
+
+// const btn = document.querySelector("button");
+// const ul = document.querySelector("ul");
+
+// let taskNum = 0;
+// btn.addEventListener("click", () => {
+//   taskNum++;
+//   let li = document.createElement("li");
+//   li.textContent = `Task ${taskNum}`;
+//   ul.append(li);
+// });
