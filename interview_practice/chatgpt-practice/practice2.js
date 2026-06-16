@@ -117,18 +117,18 @@
 //   { name: "Mike", grade: "C" },
 // ];
 
-// const groupedObj = students.reduce((acc, curr) => {
-//   if (!acc[curr.grade]) {
-//     acc[curr.grade] = [];
-//     students.forEach((item) => {
-//       if (item.grade == curr.grade) {
-//         acc[curr.grade].push(item.name);
-//       }
-//     });
-//   }
-//   return acc;
-// }, {});
-// console.log(groupedObj);
+const groupedObj = students.reduce((acc, curr) => {
+  if (!acc[curr.grade]) {
+    acc[curr.grade] = [];
+    students.forEach((item) => {
+      if (item.grade == curr.grade) {
+        acc[curr.grade].push(item.name);
+      }
+    });
+  }
+  return acc;
+}, {});
+console.log(groupedObj);
 
 // Challenge 5 — Frontend Interview Favorite
 
