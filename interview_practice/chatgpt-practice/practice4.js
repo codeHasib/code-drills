@@ -160,28 +160,28 @@
 //   averageOrder: 250
 // }
 
-const users = [
-  { email: "a@gmail.com" },
-  { email: "b@gmail.com" },
-  { email: "a@gmail.com" },
-  { email: "c@gmail.com" },
-  { email: "b@gmail.com" },
-];
+// const users = [
+//   { email: "a@gmail.com" },
+//   { email: "b@gmail.com" },
+//   { email: "a@gmail.com" },
+//   { email: "c@gmail.com" },
+//   { email: "b@gmail.com" },
+// ];
 
-// Return:
+// // Return:
 
-function removeDuplicateEmails(arr) {
-  return arr.reduce((acc, curr) => {
-    const exists = acc.some((user) => user.email === curr.email);
+// function removeDuplicateEmails(arr) {
+//   return arr.reduce((acc, curr) => {
+//     const exists = acc.some((user) => user.email === curr.email);
 
-    if (!exists) {
-      acc.push(curr);
-    }
+//     if (!exists) {
+//       acc.push(curr);
+//     }
 
-    return acc;
-  }, []);
-}
-console.log(removeDuplicateEmails(users));
+//     return acc;
+//   }, []);
+// }
+// console.log(removeDuplicateEmails(users));
 // [
 //   { email: "a@gmail.com" },
 //   { email: "b@gmail.com" },
@@ -189,3 +189,25 @@ console.log(removeDuplicateEmails(users));
 // ]
 
 // Keep the first occurrence.
+
+// Challenge 8 — Junior MERN Interview Favorite
+
+// Create:
+
+function createSlug(title) {
+  return title.trim().toLowerCase().split(" ").join("-");
+}
+
+// Input:
+
+console.log(createSlug("Learn JavaScript In 30 Days"));
+
+// Output:
+
+// "learn-javascript-in-30-days"
+
+// Requirements:
+
+// Lowercase everything.
+// Replace spaces with hyphens.
+// Remove extra spaces.
