@@ -110,20 +110,52 @@
 
 // Given:
 
-const students = [
-  { name: "Hasib", score: 88 },
-  { name: "John", score: 95 },
-  { name: "Sarah", score: 91 },
-];
+// const students = [
+//   { name: "Hasib", score: 88 },
+//   { name: "John", score: 95 },
+//   { name: "Sarah", score: 91 },
+// ];
 
-// Create:
+// // Create:
 
-function getTopScorer(students) {
-  return students.reduce((highest, lowest) =>
-    highest.score > lowest.score ? highest : lowest,
-  );
-}
+// function getTopScorer(students) {
+//   return students.reduce((highest, lowest) =>
+//     highest.score > lowest.score ? highest : lowest,
+//   );
+// }
 
-console.log(getTopScorer(students));
+// console.log(getTopScorer(students));
 
 // Return the entire student object with the highest score.
+
+// Challenge 5 — Order Statistics
+
+// Given:
+
+const orders = [
+  { amount: 100 },
+  { amount: 200 },
+  { amount: 300 },
+  { amount: 400 },
+];
+
+function orderStats(arr) {
+  const totalOrders = arr.length;
+  const totalRevenue = arr.reduce((sum, curr) => sum + curr.amount, 0);
+  const averageOrder = totalRevenue / totalOrders;
+  return {
+    totalOrders,
+    totalRevenue,
+    averageOrder,
+  };
+}
+
+console.log(orderStats(orders));
+
+// Return:
+
+// {
+//   totalOrders: 4,
+//   totalRevenue: 1000,
+//   averageOrder: 250
+// }
