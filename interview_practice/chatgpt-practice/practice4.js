@@ -69,29 +69,29 @@
 
 // Backend returns:
 
-const users = [
-  {
-    _id: "abc123",
-    name: "Hasib",
-    email: "hasib@gmail.com",
-  },
-  {
-    _id: "xyz456",
-    name: "John",
-    email: "john@gmail.com",
-  },
-];
+// const users = [
+//   {
+//     _id: "abc123",
+//     name: "Hasib",
+//     email: "hasib@gmail.com",
+//   },
+//   {
+//     _id: "xyz456",
+//     name: "John",
+//     email: "john@gmail.com",
+//   },
+// ];
 
 // Transform into:
 
-function structured(arr) {
-  return arr.map((item) => {
-    return {
-      value: item._id,
-      label: item.name,
-    };
-  });
-}
+// function structured(arr) {
+//   return arr.map((item) => {
+//     return {
+//       value: item._id,
+//       label: item.name,
+//     };
+//   });
+// }
 
 // [
 //   {
@@ -103,5 +103,27 @@ function structured(arr) {
 //     label: "John"
 //   }
 // ]
-console.log(structured(users));
+// console.log(structured(users));
 // Create a reusable function.
+
+// Challenge 4 — Find Top Scorer
+
+// Given:
+
+const students = [
+  { name: "Hasib", score: 88 },
+  { name: "John", score: 95 },
+  { name: "Sarah", score: 91 },
+];
+
+// Create:
+
+function getTopScorer(students) {
+  return students.reduce((highest, lowest) =>
+    highest.score > lowest.score ? highest : lowest,
+  );
+}
+
+console.log(getTopScorer(students));
+
+// Return the entire student object with the highest score.
