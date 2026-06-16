@@ -2,13 +2,13 @@
 
 // Given:
 
-const users = [
-  { name: "Hasib", active: true },
-  { name: "John", active: false },
-  { name: "Sarah", active: true },
-  { name: "Mike", active: false },
-  { name: "Alex", active: true },
-];
+// const users = [
+//   { name: "Hasib", active: true },
+//   { name: "John", active: false },
+//   { name: "Sarah", active: true },
+//   { name: "Mike", active: false },
+//   { name: "Alex", active: true },
+// ];
 
 // Create:
 
@@ -44,23 +44,64 @@ const users = [
 
 // Given:
 
-const products = [
-  { id: 1, name: "Laptop", stock: 10 },
-  { id: 2, name: "Phone", stock: 0 },
-  { id: 3, name: "Keyboard", stock: 5 },
-  { id: 4, name: "Monitor", stock: 0 },
-];
+// const products = [
+//   { id: 1, name: "Laptop", stock: 10 },
+//   { id: 2, name: "Phone", stock: 0 },
+//   { id: 3, name: "Keyboard", stock: 5 },
+//   { id: 4, name: "Monitor", stock: 0 },
+// ];
 
 // Create:
 
-function getOutOfStockProducts(products) {
-  return products.reduce((acc, curr) => {
-    !curr.stock ? acc.push(curr.name) : "";
-    return acc;
-  }, []);
-}
+// function getOutOfStockProducts(products) {
+//   return products.reduce((acc, curr) => {
+//     !curr.stock ? acc.push(curr.name) : "";
+//     return acc;
+//   }, []);
+// }
 
-console.log(getOutOfStockProducts(products));
+// console.log(getOutOfStockProducts(products));
 // Return:
 
 // ["Phone", "Monitor"]
+
+// Challenge 3 — API Response Formatter
+
+// Backend returns:
+
+const users = [
+  {
+    _id: "abc123",
+    name: "Hasib",
+    email: "hasib@gmail.com",
+  },
+  {
+    _id: "xyz456",
+    name: "John",
+    email: "john@gmail.com",
+  },
+];
+
+// Transform into:
+
+function structured(arr) {
+  return arr.map((item) => {
+    return {
+      value: item._id,
+      label: item.name,
+    };
+  });
+}
+
+// [
+//   {
+//     value: "abc123",
+//     label: "Hasib"
+//   },
+//   {
+//     value: "xyz456",
+//     label: "John"
+//   }
+// ]
+console.log(structured(users));
+// Create a reusable function.
