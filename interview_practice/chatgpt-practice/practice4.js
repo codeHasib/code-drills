@@ -132,25 +132,25 @@
 
 // Given:
 
-const orders = [
-  { amount: 100 },
-  { amount: 200 },
-  { amount: 300 },
-  { amount: 400 },
-];
+// const orders = [
+//   { amount: 100 },
+//   { amount: 200 },
+//   { amount: 300 },
+//   { amount: 400 },
+// ];
 
-function orderStats(arr) {
-  const totalOrders = arr.length;
-  const totalRevenue = arr.reduce((sum, curr) => sum + curr.amount, 0);
-  const averageOrder = totalRevenue / totalOrders;
-  return {
-    totalOrders,
-    totalRevenue,
-    averageOrder,
-  };
-}
+// function orderStats(arr) {
+//   const totalOrders = arr.length;
+//   const totalRevenue = arr.reduce((sum, curr) => sum + curr.amount, 0);
+//   const averageOrder = totalRevenue / totalOrders;
+//   return {
+//     totalOrders,
+//     totalRevenue,
+//     averageOrder,
+//   };
+// }
 
-console.log(orderStats(orders));
+// console.log(orderStats(orders));
 
 // Return:
 
@@ -159,3 +159,33 @@ console.log(orderStats(orders));
 //   totalRevenue: 1000,
 //   averageOrder: 250
 // }
+
+const users = [
+  { email: "a@gmail.com" },
+  { email: "b@gmail.com" },
+  { email: "a@gmail.com" },
+  { email: "c@gmail.com" },
+  { email: "b@gmail.com" },
+];
+
+// Return:
+
+function removeDuplicateEmails(arr) {
+  return arr.reduce((acc, curr) => {
+    const exists = acc.some((user) => user.email === curr.email);
+
+    if (!exists) {
+      acc.push(curr);
+    }
+
+    return acc;
+  }, []);
+}
+console.log(removeDuplicateEmails(users));
+// [
+//   { email: "a@gmail.com" },
+//   { email: "b@gmail.com" },
+//   { email: "c@gmail.com" }
+// ]
+
+// Keep the first occurrence.
