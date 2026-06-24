@@ -81,12 +81,34 @@
 // a
 // i
 
-function countVowels(str) {
-  let vowels = ["a", "e", "i", "o", "u"];
-  let count = 0;
-  for (let ch of str) {
-    if (vowels.includes(ch)) count++;
-  }
-  return count;
-}
-console.log(countVowels("javascript"));
+// function countVowels(str) {
+//   let vowels = ["a", "e", "i", "o", "u"];
+//   let count = 0;
+//   for (let ch of str) {
+//     if (vowels.includes(ch)) count++;
+//   }
+//   return count;
+// }
+// console.log(countVowels("javascript"));
+
+// Challenge 5 — Shopping Cart Discount
+
+// Given:
+
+// const cart = [
+//   { name: "Laptop", price: 1000 },
+//   { name: "Phone", price: 500 },
+// ];
+
+// Create:
+
+// function getDiscountedTotal(arr, percentage) {
+//   const totalPrice = arr.reduce((total, curr) => total + curr.price, 0);
+//   const totalDiscount = (totalPrice / 100) * percentage;
+//   const discountedPrice = totalPrice - totalDiscount;
+//   return discountedPrice;
+// }
+
+// console.log(getDiscountedTotal(cart, 10));
+
+// Return total after 10% discount.
