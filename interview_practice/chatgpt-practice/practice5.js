@@ -24,14 +24,43 @@
 
 // Given:
 
-const names = ["hasib", "john", "sarah"];
+// const names = ["hasib", "john", "sarah"];
 
-function capitalizeNames(arr) {
-  let newArr = arr.map((item) => item[0].toUpperCase() + item.slice(1));
-  return newArr;
-}
-console.log(capitalizeNames(names));
+// function capitalizeNames(arr) {
+//   let newArr = arr.map((item) => item[0].toUpperCase() + item.slice(1));
+//   return newArr;
+// }
+// console.log(capitalizeNames(names));
 
 // Return:
 
 // ["Hasib", "John", "Sarah"]
+
+// Challenge 3 — User Lookup
+
+// Given:
+
+const users = [
+  { id: 1, name: "Hasib" },
+  { id: 2, name: "John" },
+  { id: 3, name: "Sarah" },
+];
+
+// Create:
+
+function findUserById(arr, id) {
+  let user = arr.find((item) => item.id == id);
+  return user;
+}
+console.log(findUserById(users, 3));
+
+// Example:
+
+// findUserById(users, 2);
+
+// Returns:
+
+// {
+//   id: 2,
+//   name: "John"
+// }
