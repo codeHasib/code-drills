@@ -40,19 +40,19 @@
 
 // Given:
 
-const users = [
-  { id: 1, name: "Hasib" },
-  { id: 2, name: "John" },
-  { id: 3, name: "Sarah" },
-];
+// const users = [
+//   { id: 1, name: "Hasib" },
+//   { id: 2, name: "John" },
+//   { id: 3, name: "Sarah" },
+// ];
 
 // Create:
 
-function findUserById(arr, id) {
-  let user = arr.find((item) => item.id == id);
-  return user;
-}
-console.log(findUserById(users, 3));
+// function findUserById(arr, id) {
+//   let user = arr.find((item) => item.id == id);
+//   return user;
+// }
+// console.log(findUserById(users, 3));
 
 // Example:
 
@@ -64,3 +64,29 @@ console.log(findUserById(users, 3));
 //   id: 2,
 //   name: "John"
 // }
+
+// Challenge 4 — Count Vowels
+
+// Input:
+
+// "javascript"
+
+// Output:
+
+// 3
+
+// Count:
+
+// a
+// a
+// i
+
+function countVowels(str) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  let count = 0;
+  for (let ch of str) {
+    if (vowels.includes(ch)) count++;
+  }
+  return count;
+}
+console.log(countVowels("javascript"));
