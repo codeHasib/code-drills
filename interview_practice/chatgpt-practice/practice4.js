@@ -194,13 +194,13 @@
 
 // Create:
 
-function createSlug(title) {
-  return title.trim().toLowerCase().split(" ").join("-");
-}
+// function createSlug(title) {
+//   return title.trim().toLowerCase().split(" ").join("-");
+// }
 
 // Input:
 
-console.log(createSlug("Learn JavaScript In 30 Days"));
+// console.log(createSlug("Learn JavaScript In 30 Days"));
 
 // Output:
 
