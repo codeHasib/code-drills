@@ -25,3 +25,30 @@
 //   console.log(strArr);
 // }
 // capitalize("hello world from react");
+
+// Convert array to object using map
+// javascript
+// Input: ['id', 'name', 'age']
+// Output: {id: 'id', name: 'name', age: 'age'}
+// const arr = ["id", "name", "age"];
+// const arrObj = arr.reduce((acc, curr) => {
+//   acc[curr] = curr;
+//   return acc;
+// }, {});
+// console.log(arrObj);
+
+// Timeout a promise (fail if too slow)
+// javascript
+// function fetchWithTimeout(url, delay) {
+//   async function fetchData() {
+//     const res = await fetch(url);
+//     return res;
+//   }
+//   setTimeout(() => {
+//     fetchData();
+//     if (fetchData === Promise) {
+//       return "too slow";
+//     }
+//   }, delay);
+// }
+// fetchWithTimeout(url, 3000);

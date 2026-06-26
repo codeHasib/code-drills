@@ -62,7 +62,7 @@ person1.greet.call(person2);
 
 // ✅ Challenge 4: Use bind for Later Execution
 const user3 = {
-  name: "Hasib"
+  name: "Hasib",
 };
 
 function greet() {
@@ -75,4 +75,4 @@ function greet() {
 // Call it later
 
 const fnGreet = greet.bind(user);
-fnGreet()
+fnGreet();
